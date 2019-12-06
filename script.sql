@@ -20,3 +20,14 @@ DROP TABLE `tools`;
 USE `webDevelopment`;
 CREATE TABLE `clients`
 (id INT AUTO_INCREMENT PRIMARY KEY, lastname VARCHAR(50), firstname VARCHAR(50), birthdate DATE, address VARCHAR(100), phone INT, mail VARCHAR(150));
+-- PARTIE 3
+-- Exercice 1
+ALTER TABLE `languages`
+ADD COLUMN (Versions VARCHAR (50));
+-- Exercice 2
+ALTER TABLE `frameworks`
+ADD COLUMN (Version INT);
+-- Exercice 3
+USE `webDevelopment`;
+ALTER TABLE `languages` CHANGE languages version VARCHAR (50);
+-- Exercice 4
