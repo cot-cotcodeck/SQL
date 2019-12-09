@@ -41,12 +41,22 @@ MODIFY version VARCHAR(50);
 ALTER TABLE `clients` CHANGE `PhoneNumber` `PhoneNumber` VARCHAR(10);
 --PARTIE 4
 -- Exercice 1 (ne fonctionne pas)
-INSERT INTO `languages` (`language`,`version`)
-VALUES ('JavaScript', 'version 5'),
-('PHP', 'version 5.2'),
-('PHP', 'version 5.4'),
-('HTML', 'version 5.1'),
-('JavaScript', 'version 6'),
-('JavaScript', 'version 7'),
-('JavaScript', 'version 8'),
-('PHP', 'version 7');
+INSERT INTO `languages` (version, Versions)
+VALUES
+('JavaScript', 5),
+('PHP', 5.2),
+('PHP', 5.4),
+('HTML', 5.1),
+('JavaScript',6),
+('JavaScript',7),
+('JavaScript', 8),
+('PHP', 7);
+-- Exercice 2 (ne fonctionne pas)
+INSERT INTO `frameworks`( tool, Version)
+VALUES
+('Symfony', 2.8),
+('Symfony', 3),
+('Jquery',1.6),
+('Jquery', 2.10);
+--PARTIE 5
+--Exercice 1
