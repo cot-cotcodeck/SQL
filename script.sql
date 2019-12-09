@@ -4,10 +4,14 @@
 CREATE DATABASE `languages`;
 -- création de la bd languages si elle ,n'existe pas (bonne pratique)
 CREATE DATABASE IF NOT EXISTS `languages`;
+-- Exercice 2 (correction)
+CREATE DATABASE 'webDevelopment' CHARACTER SET 'utf8';
+-- ou:
+CREATE DATABASE 'webDevelopment' CHARSET = 'utfe8';
 -- Exercice 3
-CREATE DATABASE IF NOT EXISTS `frameworks` CHARACTER SET 'utf8'
+CREATE DATABASE IF NOT EXISTS `frameworks` CHARACTER SET 'utf8';
 -- Exercice 4
-DROP DATABASE `languages`
+DROP DATABASE `languages`;
 --PARTIE 2
 -- Exercice 1
 CREATE TABLE `languages` ( `id` INT NOT NULL , `languages` VARCHAR(40) NOT NULL , PRIMARY KEY (`id`), FULLTEXT (`tool`(40))) ENGINE = MyISAM;
@@ -31,3 +35,18 @@ ADD COLUMN (Version INT);
 USE `webDevelopment`;
 ALTER TABLE `languages` CHANGE languages version VARCHAR (50);
 -- Exercice 4
+ALTER TABLE `languages`
+MODIFY version VARCHAR(50);
+-- Exercice 5
+ALTER TABLE `clients` CHANGE `PhoneNumber` `PhoneNumber` VARCHAR(10);
+--PARTIE 4
+-- Exercice 1 (ne fonctionne pas)
+INSERT INTO `languages` (`language`,`version`)
+VALUES ('JavaScript', 'version 5'),
+('PHP', 'version 5.2'),
+('PHP', 'version 5.4'),
+('HTML', 'version 5.1'),
+('JavaScript', 'version 6'),
+('JavaScript', 'version 7'),
+('JavaScript', 'version 8'),
+('PHP', 'version 7');
