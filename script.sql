@@ -33,12 +33,12 @@ ALTER TABLE `frameworks`
 ADD COLUMN (Version INT);
 -- Exercice 3
 USE `webDevelopment`;
-ALTER TABLE `languages` CHANGE languages version VARCHAR (50);
+ALTER TABLE `languages` CHANGE languages `version` VARCHAR (50);
 -- Exercice 4
 ALTER TABLE `languages`
-MODIFY version VARCHAR(50);
+MODIFY `version` VARCHAR(15);
 -- Exercice 5
-ALTER TABLE `clients` CHANGE `PhoneNumber` `PhoneNumber` VARCHAR(10);
+ALTER TABLE `clients` CHANGE `PhoneNumber` `PhoneNumber` VARCHAR(15);
 --PARTIE 4
 -- Exercice 1 (ne fonctionne pas)
 INSERT INTO `languages` (version, Versions)
@@ -60,3 +60,28 @@ VALUES
 ('Jquery', 2.10);
 --PARTIE 5
 --Exercice 1
+SELECT version FROM `languages` ASC;
+--Exercice 2
+SELECT version FROM `languages` WHERE `versions`= 'PHP';
+--Exercice 3
+SELECT version FROM `languages` WHERE `versions`!= 'PHP';--ou '!=' = '<>' ou 'Where not'
+-- Exercice 4
+SELECT version FROM `languages`= 'PHP'or`versions`= 'Javascript';
+--Exercice 5
+SELECT 'id','name','version'
+FROM 'frameworks'
+WHERE 'version' LIKE 'version 2.%';
+--Exercice 6
+SELECT 'id','name','version'
+FROM 'frameworks'
+WHERE 'id'= 1 or 3;-- ou WHERE 'id' IN (1,3);
+--PARTIE 6
+--Exercice 1
+DELETE FROM 'frameworks'
+SET 'name' = 'Symfony2' -- ancienne valeur
+WHERE 'name' = 'Symfony';-- nouvelle valeur
+--Exercice 2
+UPDATE 'languages'
+SET 'versions'= '5.1'
+WHERE 'languages' = 'javascripts' AND 'version' = '5';
+-- pour une commande avec delete ou update, il y aura toujours un where. Il est primordial de mettre le where sinon risque de tout supprimer/modifier.
